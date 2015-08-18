@@ -1,0 +1,7 @@
+<%= form_for(:stock, url: stocks_path) do |f| %>
+  <%= f.label :symbol %>
+  <%= f.text_field :symbol %><br>
+  <%= f.label :period %>
+  <%= f.text_field :period %>
+  <%= f.submit "Search" %>
+<% end %>

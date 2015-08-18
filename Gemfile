@@ -38,3 +38,6 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# replace "/stocks/:id" with "/stocks/goog", etc.
+gem 'friendly_id', '~> 5.1.0'
+
