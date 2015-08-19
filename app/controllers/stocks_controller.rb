@@ -2,10 +2,12 @@ class StocksController < ApplicationController
   # def index
   #   redirect_to new_stock_path
   # end
-
-  # def show
-  #   @stock = Stock.find(params[:id])
+  # def new
+  #   @stock = Stock.new
   # end
+  def show
+    @stock = Stock.find(params[:id])
+  end
 
   def create
     @stock = Stock.new(stock_params)
@@ -17,8 +19,6 @@ class StocksController < ApplicationController
     end
   end
 
-  def show
-  end
 
 
   private

@@ -1,5 +1,24 @@
-<%= form_for :stock, url: stocks_path do |f| %>
-  <%= f.label :symbol %>
-  <%= f.text_field :symbol %><br>
-  <%= f.submit "Search" %>
-<% end %>
+<header>
+  <div class="logout">
+    <%= form_for :session, url: logout_path do |f| %>
+      <%= f.submit "Logout", class: "logout-btn" %>
+    <% end %>
+  </div>
+
+  <div class="account">
+    <!-- adding "url: edit_user_path" does not work for some reasons -->
+    <%= form_for :user do |f| %>
+      <%= f.submit "Account", class: "account-btn" %>
+    <% end %>
+  </div>
+</header>
+
+<div class="symbol-box">
+  <%= form_for :stock, url: stocks_path do |f| %>
+    <%= f.text_field :symbol, id: "symbol", placeholder: "Enter a Stock Symbol" %><br>
+    <%= f.submit "Search" %>
+  <% end %>
+  <p> Note: if the interval field is left blank, the default value of 30 days will be used.</p>
+</div>
+
+

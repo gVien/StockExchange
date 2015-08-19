@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
 
 
-  get "stocks" => "stocks#new"
+  get "stocks" => "stocks#new", as: :new_stock
   get "stocks/:id" => "stocks#show", as: :stock
   post "stocks" => "stocks#create"
 
