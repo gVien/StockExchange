@@ -5,5 +5,16 @@
     <%= f.text_field :email, id: "signup-email", placeholder: "Enter Your Email Address" %>
     <%= f.password_field :password, id: "signup-pw", placeholder:"Enter Your Password" %><br><br>
     <%= f.submit "Signup" %>
+
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <p> There are <%= pluralize(@user.errors.count, "error") %> prohibited you from signing up:</p>
+        <ul>
+          <%= @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
   <% end %>
 </div>

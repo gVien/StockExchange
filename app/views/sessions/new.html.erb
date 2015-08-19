@@ -8,9 +8,21 @@
     <p class="welcome">Welcome!, please login or signup to continue!</p>
     <div class="login-form">
       <%= form_for(:session, url: login_path) do |f| %>
+
         <%= f.text_field :email, placeholder: "Enter Your Email", id: "login-email" %>
-        <%= f.text_field :password, placeholder: "Enter Your Password", id: "login-password" %>
+        <%= f.password_field :password, placeholder: "Enter Your Password", id: "login-password" %>
         <%= f.submit "Login", id: "login-btn" %>
+
+        <% if @user.errors.any? %>
+          <div id="error_explanation">
+            <p> There are <%= pluralize(@user.errors.count, "error") %> prohibited you from logging in:</p>
+            <ul>
+              <%= @user.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
       <% end %>
     <p class="no-acct"> Don't have an account?</p>
     <div class="signup-btn">
