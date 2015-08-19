@@ -1,8 +1,7 @@
 class StocksController < ApplicationController
-  def index
-    redirect_to new_stock_path
-  end
-
+  # def index
+  #   redirect_to new_stock_path
+  # end
 
   # def show
   #   @stock = Stock.find(params[:id])
@@ -12,7 +11,7 @@ class StocksController < ApplicationController
     @stock = Stock.new(stock_params)
 
     if @stock.save
-      redirect_to @stock
+      redirect_to stock_path(@stock)
     else
       render "new"
     end

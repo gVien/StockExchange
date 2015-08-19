@@ -4,9 +4,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    User.create(user_params)
-    redirect_to stocks_path
-    p "Stock path is #{stocks_path}"
+    @user = User.create(user_params)
+
+    if @user.save
+      redirect_to stocks_path
+    else
+      render "new"
+    end
   end
 
   private

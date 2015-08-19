@@ -1,6 +1,5 @@
 class WelcomeController < ApplicationController
   def index
-    # @user = User.new
-    # redirect_to "/login"
+    redirect_to login_path
   end
 end
