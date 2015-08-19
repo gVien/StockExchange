@@ -1,5 +1,4 @@
 class GoogleFinanceDataCollector
-  require "mechanize"
   def self.parse_company_info_at_google_finance_for(sym)
     mechanize = Mechanize.new
     url = "https://www.google.com/finance?q=" + sym
@@ -98,5 +97,5 @@ class GoogleFinanceDataCollector
 end
 
 
-require "mechanize"
-p j = GoogleFinanceDataCollector.map("uvxy")
+# require "mechanize"
+# p j = GoogleFinanceDataCollector.map("uvxy")
