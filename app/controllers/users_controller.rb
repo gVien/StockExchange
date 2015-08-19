@@ -5,7 +5,8 @@ class UsersController < ApplicationController
 
   def create
     User.create(user_params)
-    redirect_to stock_new_path
+    redirect_to stocks_path
+    p "Stock path is #{stocks_path}"
   end
 
   private

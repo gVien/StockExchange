@@ -1,9 +1,29 @@
 class StocksController < ApplicationController
-  def new
-    render "new"
+  def index
+    redirect_to new_stock_path
   end
 
+
+  # def show
+  #   @stock = Stock.find(params[:id])
+  # end
+
   def create
-    @stocks = Stock.new
+    @stock = Stock.new(stock_params)
+
+    if @stock.save
+      redirect_to @stock
+    else
+      render "new"
+    end
+  end
+
+  def show
+  end
+
+
+  private
+  def stock_params
+    params.require(:stock).permit(:symbol)
   end
 end
