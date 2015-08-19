@@ -40,4 +40,8 @@ gem 'spring',        group: :development
 
 # replace "/stocks/:id" with "/stocks/goog", etc.
 gem 'friendly_id', '~> 5.1.0'
+# to save time, this gem will be used to get the data 
+# see transparentech.com/projects/yahoofinance
+gem 'yahoofinance'
 
+gem 'mechanize'
