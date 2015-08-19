@@ -1,11 +1,9 @@
-<%= form_for @user do |f|%>
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name %>
-  <%= f.label :last_name %>
-  <%= f.text_field :last_name %>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-  <%= f.label :password%>
-  <%= f.password_field :password%>
-  <%= f.submit "Signup" %>
-<% end %>
+<div class="login-signup">
+  <%= form_for @user do |f|%>
+    <%= f.text_field :first_name, id: "signup-fn", placeholder: "Enter Your First Name" %>
+    <%= f.text_field :last_name, id: "signup-ln", placeholder: "Enter Your Last Name" %>
+    <%= f.text_field :email, id: "signup-email", placeholder: "Enter Your Email Address" %>
+    <%= f.password_field :password, id: "signup-pw", placeholder:"Enter Your Password" %><br><br>
+    <%= f.submit "Signup" %>
+  <% end %>
+</div>
