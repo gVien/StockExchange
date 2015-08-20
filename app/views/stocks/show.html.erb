@@ -1,6 +1,6 @@
 <header>
   <div class="logout">
-    <%= form_for :session, url: logout_path do |f| %>
+    <%= form_for :session, url: logout_path, method: :delete do |f| %>
       <%= f.submit "Logout", class: "logout-btn" %>
     <% end %>
   </div>

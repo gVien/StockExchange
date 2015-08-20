@@ -1,12 +1,24 @@
 class StocksController < ApplicationController
-  # def index
-  #   redirect_to new_stock_path
-  # end
-  # def new
-  #   @stock = Stock.new
-  # end
+  include ApplicationHelper
+
+  def index
+    redirect_to new_stock_path
+  end
+
+  def new
+    if current_user
+      @stock = Stock.new
+    else
+      redirect_to login_path
+    end
+  end
+
   def show
-    @stock = Stock.find(params[:id])
+    if current_user
+      @stock = Stock.find(params[:id])
+    else
+      redirect_to login_path
+    end
   end
 
   def create

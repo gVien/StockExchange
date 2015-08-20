@@ -7,14 +7,14 @@ Rails.application.routes.draw do
 
 
 
-  get "stocks" => "stocks#new", as: :new_stock
-  get "stocks/:id" => "stocks#show", as: :stock
-  post "stocks" => "stocks#create"
+  # get "stocks" => "stocks#new", as: :new_stock
+  # get "stocks/:id" => "stocks#show", as: :stock
+  # post "stocks" => "stocks#create"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   resources :users
-  # resources :stocks
+  resources :stocks, only: [:index, :new, :show, :create]
 
 
   # You can have the root of your site routed with "root"

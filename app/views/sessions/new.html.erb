@@ -7,7 +7,7 @@
   <div class="login-signup">
     <p class="welcome">Welcome!, please login or signup to continue!</p>
     <div class="login-form">
-      <%= form_for(:session, url: login_path) do |f| %>
+      <%= form_for(:session) do |f| %>
 
         <%= f.text_field :email, placeholder: "Enter Your Email", id: "login-email" %>
         <%= f.password_field :password, placeholder: "Enter Your Password", id: "login-password" %>

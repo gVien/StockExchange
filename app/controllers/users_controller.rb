@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  include ApplicationHelper
+
   def new
     @user = User.new
   end
@@ -7,6 +9,7 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
 
     if @user.save
+      login(@user)
       redirect_to stocks_path
     else
       render "new"
